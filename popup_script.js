@@ -2,10 +2,19 @@ console.log('Extension popup script (popup_script.js)');
 
 window.onload = async e => {
   const openTabButtonElement = document.createElement('button');
-  openTabButtonElement.appendChild(document.createTextNode('Extension Test Page'));
+  openTabButtonElement.appendChild(document.createTextNode('Create a window'));
   openTabButtonElement.onclick = e => { 
-    // window.open('index.html', '_blank'); 
-    navigator.hid.requestDevice({filters: []});
+    const initParams = {
+      url: `/index.html`,
+      width: 100,
+      height:100,
+      left:0,
+      top:0,
+      type: 'panel',
+    }
+    chrome.windows.create(initParams, function(window) {
+      console.log('Connect success.')
+    });
   };
   document.body.appendChild(openTabButtonElement);
 };
