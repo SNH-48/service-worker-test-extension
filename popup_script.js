@@ -13,7 +13,7 @@ window.onload = async e => {
       type: 'panel',
     }
     chrome.windows.create(initParams, function(window) {
-      console.log('Connect success.')
+      console.log('create success.')
     });
   };
   document.body.appendChild(openTabButtonElement);
