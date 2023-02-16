@@ -6,8 +6,8 @@ window.onload = async e => {
   openTabButtonElement.onclick = e => { 
     const initParams = {
       url: `/index.html`,
-      width: 100,
-      height:100,
+      width: 300,
+      height:500,
       left:0,
       top:0,
       type: 'panel',
